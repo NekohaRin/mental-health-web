@@ -4,75 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="../assets/img/mindease.ico" type="image/x-icon">
     <title>Register</title>
     <style>
-        #no_hp {
-            color: blue;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            height: 200px;
-            width: 800px;
-            background-color: salmon;
+        .diagonal-bg {
+            clip-path: polygon(65% 0, 100% 0, 100% 100%, 0 100%, 0 93%);
+            background: rgba(255, 255, 255, .5);
+            backdrop-filter: blur(4px);
         }
     </style>
 </head>
 
-<body>
-        <?php
-            if (isset($_GET['status'])){
-                if($_GET['status']=='passwordsalah'){
-                    echo ("Gagal registrasi, pasword dan konfirmasi pasword berbeda");
-                } else if($_GET['status']=='ada'){
-                    echo ("Gagal registrasi, email dan nomer handphone telah terdaftar");
-                } else if($_GET['status']=='emailada'){
-                    echo ("Gagal registrasi, email sudah terdaftar");
-                } else if($_GET['status']=='nohpada'){
-                    echo ("Gagal registrasi, nomer handphone sudah terdaftar");
-                }
-            }
-        ?>
+<body class="h-screen w-full bg-cover bg-center" style="background-image: url(../assets/img/beground1.png) ">
+    <?php
+    if (isset($_GET['status'])) {
+        if ($_GET['status'] == 'passwordsalah') {
+            echo ("Gagal registrasi, pasword dan konfirmasi pasword berbeda");
+        } else if ($_GET['status'] == 'ada') {
+            echo ("Gagal registrasi, email dan nomer handphone telah terdaftar");
+        } else if ($_GET['status'] == 'emailada') {
+            echo ("Gagal registrasi, email sudah terdaftar");
+        } else if ($_GET['status'] == 'nohpada') {
+            echo ("Gagal registrasi, nomer handphone sudah terdaftar");
+        }
+    }
+    ?>
 
-    <h1>Buat Akun Baru</h1>
-    <form action="scr/pro_regist.php" method="POST">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="Masukkan Nama Anda" required>
-        <br>
+    <div class="relative h-full w-full flex">
+        <div class="absolute right-0 top-0 h-full w-full diagonal-bg"></div>
+        <div class="z-10 w-full flex justify-center items-center">
+            <div class="w-[570px]"></div>
+            <div class="w-[380px] mr-7">
+                <h1 class="text-6xl font-bold mb-5">Buat Akun Baru</h1>
+                <form action="scr/pro_regist.php" method="POST" class="items-center">
+                    <div class="flex mb-4 items-center">
+                        <label  class="w-32 text-xl font-semibold" for="username">Username:</label><br>
+                        <span class="mx-3 text-xl font-bold">:</span>
+                        <input class="border px-3 py-1 w-full rounded" type="text" id="username" name="username" placeholder="Masukkan Nama Anda" required>
+                    </div>
 
-        <label for="email">Alamat Email:</label>
-        <input type="email" id="email" name="email" placeholder="Masukkan Alamat Email Anda" required>
-        <br>
+                    <div class="flex mb-6 items-center">
+                        <label class="w-32 text-xl font-semibold" for="email">Alamat Email:</label>
+                        <span class="mx-3 text-xl font-bold">:</span>
+                        <input class="border px-3 py-1 w-full rounded" type="email" id="email" name="email" placeholder="Masukkan Alamat Email Anda" required>
+                    </div>
 
-        <label for="no_hp">Nomer Handphone:</label><br>
-        <input type="tel" id="no_hp" name="no_hp" pattern="^(\+62|62|0)8[0-9]{8,11}$" placeholder="08xxxx" required>
-        <br>
+                    <div class="flex mb-6 items-center">
+                        <label class="w-32 text-xl font-semibold" for="no_hp">Nomer Handphone:</label>
+                        <span class="mx-3 text-xl font-bold">:</span>
+                        <input class="border px-3 py-1 w-full rounded" type="tel" id="no_hp" name="no_hp" pattern="^(\+62|62|0)8[0-9]{8,11}$" placeholder="08xxxx" required>
+                    </div>
 
-        <label for="tanggal_lahir">Tanggal Lahir</label><br>
-        <p>format: Tanggal/Bulan/Tahun</p>
-        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
-        <br>
+                    <div class="flex mb-6 items-center">
+                        <label class="w-32 text-xl font-semibold" for="tanggal_lahir">Tanggal Lahir</label>
+                        <span class="mx-3 text-xl font-bold">:</span>
+                        <input class="border px-3 py-1 w-full rounded" type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+                    </div>
 
-        <label for="gender">Gender</label><br>
-        <select id="gender" name="gender" required>
-            <option value="" disabled selected></option>
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
-        </select>
-        <br>
-        <!-- Password 2X -->
-        <label for="password">Password</label><br>
-        <input type="password" id="password" name="Password" maxlength="8" placeholder="Masukkan Pasword Anda maksimal 8 karakter" required>
-        <br>
-        <label for="konpass">Konfirmasi Password</label><br>
-        <input type="password" id="konpass" name="konpass" maxlength="8" placeholder="Masukkan Kembali Password Anda" required>
-        <br>
+                    <div class="flex mb-6 items-center">
+                        <label class="w-32 text-xl font-semibold" for="gender">Gender</label>
+                        <span class="mx-3 text-xl font-bold">:</span>
+                        <select class="border px-3 py-1 w-full rounded"  id="gender" name="gender" required>
+                            <option value="" disabled selected></option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
 
-        <button type="submit">Registrasi</button>
-        <button type="reset">Reset</button>
-    </form>
-    <p>Sudah punya akun? <a href="login.php">Kembali login</a></p>
+                    <!-- Password 2X -->
+                    <div class="flex mb-6 items-center">
+                        <label for="password" class="w-32 text-xl font-semibold">Password</label><br>
+                        <span class="mx-3 text-xl font-bold">:</span>
+                        <input type="password" class="border px-3 py-1 w-full rounded" id="password" name="Password" maxlength="8" placeholder="Masukkan Pasword Anda maksimal 8 karakter" required>
+                    </div>
+
+                    <div class="flex mb-6 items-center">
+                        <label for="konpass" class="w-32 text-xl font-semibold">Konfirmasi Password</label>
+                        <span class="mx-3 text-xl font-bold">:</span>
+                        <input type="password" class="border px-3 py-1 w-full rounded" id="konpass" name="konpass" maxlength="8" placeholder="Masukkan Kembali Password Anda" required>
+                    </div>
+                    <button type="submit" class="bg-lime-600 font-bold text-xl px-7 py-3 rounded-full">Registrasi</button>
+                </form>
+                <p>Sudah punya akun? <a href="login.php" class="text-lime-600 font-semibold">Kembali login</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

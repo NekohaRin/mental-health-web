@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Kesehatan Mental</title>
-    <link rel="stylesheet" href="../dist/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="shortcut icon" href="../assets/img/mindease.ico" type="image/x-icon">
     <style>
         html,
         body {
@@ -81,16 +82,12 @@
 
 <body>
     <h1>Kesehatan Mental</h1>
-    <button type="button" onclick="window.location.href='dashboard.php'">Masuk</button>
+    <button type="button" onclick="window.location.href='pages/dashboard.php'">Masuk</button>
     <br>
-    <a href="login_email.php">Login</a>
+    <a href="pages/login_email.php">Login</a>
     <br>
-    <a href="image/informasi.php">Tentang Kami</a>
+    <a href="pages/informasi.php">Tentang Kami</a>
     <br>
-    <div class="cont">
-        <h2 class="text-3xl font-bold text-indigo-400">cobain
-        </h2>
-    </div>
 </body>
 
 </html>
