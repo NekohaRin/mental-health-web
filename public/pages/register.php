@@ -13,6 +13,18 @@
             background: rgba(255, 255, 255, .5);
             backdrop-filter: blur(4px);
         }
+
+        .hijau_text {
+            color: #343616;
+        }
+
+        .hijau-bg {
+            background-color: #343616;
+        }
+
+        .brown-text {
+            color: #c4b291;
+        }
     </style>
 </head>
 
@@ -51,8 +63,8 @@
                     </div>
 
                     <div class="flex mb-6 items-center">
-                        <label class="w-32 text-xl font-semibold" for="no_hp">Nomer Handphone:</label>
-                        <span class="mx-3 text-xl font-bold">:</span>
+                        <label class="w-32 text-xl font-semibold" for="no_hp">Nomer Handphone</label>
+                        <span class="mx-3 ml-100 text-xl font-bold">:</span>
                         <input class="border px-3 py-1 w-full rounded" type="tel" id="no_hp" name="no_hp" pattern="^(\+62|62|0)8[0-9]{8,11}$" placeholder="08xxxx" required>
                     </div>
 
@@ -84,9 +96,9 @@
                         <span class="mx-3 text-xl font-bold">:</span>
                         <input type="password" class="border px-3 py-1 w-full rounded" id="konpass" name="konpass" maxlength="8" placeholder="Masukkan Kembali Password Anda" required>
                     </div>
-                    <button type="submit" class="bg-lime-600 font-bold text-xl px-7 py-3 rounded-full">Registrasi</button>
+                    <button type="submit" class="hijau-bg brown-text font-bold text-xl px-7 py-3 rounded-full">Registrasi</button>
                 </form>
-                <p>Sudah punya akun? <a href="login.php" class="text-lime-600 font-semibold">Kembali login</a></p>
+                <p>Sudah punya akun? <a href="public/login.php" class="hijau-text font-semibold">Kembali login</a></p>
             </div>
         </div>
     </div>
