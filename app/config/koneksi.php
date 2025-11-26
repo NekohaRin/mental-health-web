@@ -1,7 +1,7 @@
 <?php
     $server = "localhost";
     $user = "root";
-    $password = "Sc1encen";
+    $password = "";
     $database = "kesehatan";
 
     $koneksi = mysqli_connect($server, $user, $password, $database);
