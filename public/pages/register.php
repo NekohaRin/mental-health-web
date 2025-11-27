@@ -1,3 +1,7 @@
+<?php 
+include '../../'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +51,7 @@
 
                     <div class="flex mb-6 items-center">
                         <label class="w-32 text-xl font-semibold" for="no_hp">Nomer Handphone</label>
-                        <span class="mx-3 ml-100 text-xl font-bold">:</span>
+                        <span class="mx-3 ml-10 text-xl font-bold">:</span>
                         <input class="border px-3 py-1 w-full rounded" type="tel" id="no_hp" name="no_hp" pattern="^(\+62|62|0)8[0-9]{8,11}$" placeholder="08xxxx" required>
                     </div>
 
@@ -81,7 +85,7 @@
                     </div>
                     <button type="submit" class="hijau-bg brown-text font-bold text-xl px-7 py-3 rounded-full">Registrasi</button>
                 </form>
-                <p>Sudah punya akun? <a href="public/login.php" class="hijau-text font-semibold">Kembali login</a></p>
+                <p>Sudah punya akun? <a href="login.php" class="hijau-text font-semibold">Kembali login</a></p>
             </div>
         </div>
     </div>
