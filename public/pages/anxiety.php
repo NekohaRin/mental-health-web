@@ -22,9 +22,6 @@
 
         <form id="form" action="../app/controllers/proses_ceksehat.php?cek=anxiety" method="POST" class="space-y-6">
 
-            <!-- PERTANYAAN TEMPLATE -->
-            <!-- tinggal duplikasi dengan nama berbeda -->
-
             <!-- 1 -->
             <div class="space-y-2">
                 <label class="font-semibold">Merasa gugup, cemas, atau tegang.</label>
@@ -258,4 +255,5 @@
     </script>
 
 </body>
+
 </html>

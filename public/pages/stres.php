@@ -15,7 +15,7 @@
         <h1 class="text-3xl font-bold mb-4 text-center text-gray-800">Test Burnout</h1>
         <h1 class="text-2xl font-semibold mb-6 text-center">Seberapa sering kamu mengalami hal berikut:</h1>
         <!-- PROGRESS BAR -->
-       <div class="w-full bg-gray-200 rounded-full h-3 mb-6">
+        <div class="w-full bg-gray-200 rounded-full h-3 mb-6">
             <div id="progressBar" class="bg-blue-500 h-3 rounded-full transition-all duration-300" style="width: 0%;"></div>
         </div>
 
@@ -236,7 +236,7 @@
 
         </form>
     </div>
-       <script>
+    <script>
         const total = 9;
         const inputs = document.querySelectorAll("input[type=radio]");
         const progressBar = document.getElementById("progressBar");

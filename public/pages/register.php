@@ -7,25 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="shortcut icon" href="../assets/img/mindease.ico" type="image/x-icon">
     <title>Register</title>
-    <style>
-        .diagonal-bg {
-            clip-path: polygon(65% 0, 100% 0, 100% 100%, 0 100%, 0 93%);
-            background: rgba(255, 255, 255, .5);
-            backdrop-filter: blur(4px);
-        }
+    <link rel="stylesheet" href="../css/style.css">
 
-        .hijau_text {
-            color: #343616;
-        }
-
-        .hijau-bg {
-            background-color: #343616;
-        }
-
-        .brown-text {
-            color: #c4b291;
-        }
-    </style>
 </head>
 
 <body class="h-screen w-full bg-cover bg-center" style="background-image: url(../assets/img/beground1.png) ">
@@ -49,9 +32,9 @@
             <div class="w-[570px]"></div>
             <div class="w-[380px] mr-7">
                 <h1 class="text-6xl font-bold mb-5">Buat Akun Baru</h1>
-                <form action="scr/pro_regist.php" method="POST" class="items-center">
+                <form action="../../app/controllers/process_register.php" method="POST" class="items-center">
                     <div class="flex mb-4 items-center">
-                        <label  class="w-32 text-xl font-semibold" for="username">Username:</label><br>
+                        <label class="w-32 text-xl font-semibold" for="username">Username:</label><br>
                         <span class="mx-3 text-xl font-bold">:</span>
                         <input class="border px-3 py-1 w-full rounded" type="text" id="username" name="username" placeholder="Masukkan Nama Anda" required>
                     </div>
@@ -77,7 +60,7 @@
                     <div class="flex mb-6 items-center">
                         <label class="w-32 text-xl font-semibold" for="gender">Gender</label>
                         <span class="mx-3 text-xl font-bold">:</span>
-                        <select class="border px-3 py-1 w-full rounded"  id="gender" name="gender" required>
+                        <select class="border px-3 py-1 w-full rounded" id="gender" name="gender" required>
                             <option value="" disabled selected></option>
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>

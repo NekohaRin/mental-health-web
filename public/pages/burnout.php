@@ -11,8 +11,6 @@
 
 <body class="bg-gray-100">
 
-
-
     <div class="max-w-3xl mx-auto mt-6 p-4">
         <h1 class="text-3xl font-bold mb-4 text-center text-gray-800">Test Burnout</h1>
         <h1 class="text-2xl font-semibold mb-4 text-center text-gray-800">Seberapa sering kamu mengalami hal berikut:</h1>
@@ -22,7 +20,6 @@
         </div>
         <form action="../app/controllers/proses_ceksehat.php?cek=burnout" method="POST">
 
-            <!-- Loop Card -->
             <!-- 1 -->
             <div class="bg-white p-4 rounded-xl shadow-md mb-4">
                 <p class="font-semibold mb-3">1. Merasa kelelahan secara emosional.</p>

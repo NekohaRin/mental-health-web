@@ -20,12 +20,12 @@
         <h2 class="ml-9 text-3xl hover:text-lime-400 font-semibold">MindEase</h2>
         <ul class="list-none flex flex-row gap-x-6 bg-lime-200 px-1.5 py-2 rounded-full">
             <li><a href="#" class=" bg-lime-50 px-4 rounded-full py-1.5">Beranda</a></li>
-            <li><a href="teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
+            <li><a href="pages/teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
             <li><a href="pages/article&tips.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
             <li><a href="pages/daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
             <li><a href="pages/about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
-        <a href="login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a>
+        <a href="pages/login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a>
     </nav>
 
     <!-- MAIN SECTION -->
@@ -46,15 +46,21 @@
         <div class="description mt-7 mb-5">
             <h1 class="text-3xl mt-4 mb-3">About MindEase</h1>
             <p class="mt-2">
-                MindEase adalah platform kesehatan mental yang dirancang untuk membantu pengguna memahami, 
-                memantau, dan meningkatkan kesejahteraan emosional mereka. Dengan tampilan yang sederhana, 
-                modern, dan ramah pengguna, MindEase menghadirkan berbagai fitur yang memudahkan siapa saja 
-                untuk mulai peduli pada kondisi mental mereka tanpa rasa canggung atau keraguan. Setiap 
+                MindEase adalah platform kesehatan mental yang dirancang untuk membantu pengguna memahami,
+                memantau, dan meningkatkan kesejahteraan emosional mereka. Dengan tampilan yang sederhana,
+                modern, dan ramah pengguna, MindEase menghadirkan berbagai fitur yang memudahkan siapa saja
+                untuk mulai peduli pada kondisi mental mereka tanpa rasa canggung atau keraguan. Setiap
                 bagian aplikasi dibuat agar mudah diakses, baik oleh pemula maupun pengguna yang sudah terbiasa dengan layanan digital. </p>
             </p>
 
             <p class="mt-5">
-                MindEase menyediakan berbagai tes kesehatan mental yang telah disesuaikan dengan standar psikologi populer, seperti tes tingkat stres, kecemasan, suasana hati, hingga keseimbangan hidup. Hasil tes akan ditampilkan secara jelas sehingga pengguna dapat memahami kondisi diri mereka dengan lebih baik. Platform ini juga dilengkapi artikel dan tips kesehatan mental yang kredibel untuk membantu pengguna belajar menangani tantangan emosional sehari‑hari. Selain itu, MindEase menawarkan fitur konsultasi yang memungkinkan pengguna mengatur jadwal atau mendaftarkan sesi dengan konselor atau psikolog yang tersedia.
+                MindEase menyediakan berbagai tes kesehatan mental yang telah disesuaikan dengan standar 
+                psikologi populer, seperti tes tingkat stres, kecemasan, suasana hati, hingga keseimbangan 
+                hidup. Hasil tes akan ditampilkan secara jelas sehingga pengguna dapat memahami kondisi diri 
+                mereka dengan lebih baik. Platform ini juga dilengkapi artikel dan tips kesehatan mental yang 
+                kredibel untuk membantu pengguna belajar menangani tantangan emosional sehari‑hari. Selain itu, 
+                MindEase menawarkan fitur konsultasi yang memungkinkan pengguna mengatur jadwal atau mendaftarkan 
+                sesi dengan konselor atau psikolog yang tersedia.
             </p>
         </div>
 

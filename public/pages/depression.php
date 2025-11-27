@@ -20,10 +20,8 @@
             <div id="progressBar" class="bg-blue-500 h-3 rounded-full transition-all duration-300" style="width: 0%;"></div>
         </div>
 
-        <form id="form" action="../app/controllers/proses_ceksehat.php?cek=anxiety" method="POST" class="space-y-6">
+        <form id="form" action="../app/controllers/proses_ceksehat.php?cek=depresi" method="POST" class="space-y-6">
 
-            <!-- PERTANYAAN TEMPLATE -->
-            <!-- tinggal duplikasi dengan nama berbeda -->
 
             <!-- 1 -->
             <div class="space-y-2">
@@ -258,4 +256,5 @@
     </script>
 
 </body>
+
 </html>

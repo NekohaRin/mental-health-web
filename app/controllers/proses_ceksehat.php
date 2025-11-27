@@ -10,12 +10,24 @@ if($_GET['cek']=='stres'){
         header(""); //Lokasi recap
     }
 } else if ($_GET['cek']=='depresi'){
-
-} else if ($_GET['cek']=='bornout'){
-
-}else if ($_GET['cek']=='kecemasan'){
-
+    $skor=$_POST['satu']+$_POST['dua']+$_POST['tiga']+$_POST['empat']+$_POST['lima']+$_POST['enam']+$_POST['tuju']+$_POST['delapan']+$_POST['sembilan'];
+    $sql=mysqli_query($koneksi, "INSERT INTO depresi (id_user, skor, tgl_buat) values ('$id_user', '$skor', NOW()");
+    if ($sql){
+        header(""); //Lokasi recap
+    }
+} else if ($_GET['cek']=='burnout'){
+    $skor=$_POST['q1']+$_POST['q2']+$_POST['q3']+$_POST['q4']+$_POST['q5']+$_POST['q6']+$_POST['q7']+$_POST['q8']+$_POST['q9'];
+    $sql=mysqli_query($koneksi, "INSERT INTO bornout (id_user, skor, tgl_buat) values ('$id_user', '$skor', NOW()");
+    if ($sql){
+        header(""); //Lokasi recap
+    }
+}else if ($_GET['cek']=='anxiety'){
+    $skor=$_POST['satu']+$_POST['dua']+$_POST['tiga']+$_POST['empat']+$_POST['lima']+$_POST['enam']+$_POST['tuju']+$_POST['delapan']+$_POST['sembilan'];
+    $sql=mysqli_query($koneksi, "INSERT INTO kecemasan (id_user, skor, tgl_buat) values ('$id_user', '$skor', NOW()");
+    if ($sql){
+        header(""); //Lokasi recap
+    }
 }else if ($_GET['cek']=='k_tidur'){
-
+    
 }
 ?>
