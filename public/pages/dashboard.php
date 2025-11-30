@@ -1,4 +1,5 @@
 <?php
+session_start();
 // include "config/session_protected.php";
 ?>
 
@@ -12,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="shortcut icon" href="../assets/img/mindease.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="bg-lime-50">
@@ -19,18 +21,18 @@
         <h2 class="ml-9 text-3xl hover:text-lime-400 font-semibold">MindEase</h2>
         <ul class="list-none flex flex-row gap-x-6 bg-lime-200 px-1.5 py-2 rounded-full">
             <li><a href="#" class=" bg-lime-50 px-4 rounded-full py-1.5">Beranda</a></li>
-            <li><a href="teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
-            <li><a href="article&tips.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
-            <li><a href="daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
-            <li><a href="about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
+            <li><a href="pages/teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
+            <li><a href="pages/article&tips.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
+            <li><a href="pages/daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
+            <li><a href="pages/about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
-        <a href="login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a>
+        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username']?></p>
     </nav>
 
     <!-- MAIN SECTION -->
     <div class="container mx-auto flex flex-col items-center justify-center mt-4 text-center">
         <div class="hero">
-            <img src="../assets/img/beground1.png" alt="" class="rounded-xl">
+            <img src="../assets/img/dashboard.png" alt="" class="rounded-xl">
 
             <audio id="bg-audio" autoplay loop>
                 <source src="../assets/audio/audio.mp3" type="audio/mpeg">
@@ -45,11 +47,21 @@
         <div class="description mt-7 mb-5">
             <h1 class="text-3xl mt-4 mb-3">About MindEase</h1>
             <p class="mt-2">
-                MindEase adalah platform kesehatan mental yang dirancang untuk membantu pengguna memahami, memantau, dan meningkatkan kesejahteraan emosional mereka. Dengan tampilan yang sederhana, modern, dan ramah pengguna, MindEase menghadirkan berbagai fitur yang memudahkan siapa saja untuk mulai peduli pada kondisi mental mereka tanpa rasa canggung atau keraguan. Setiap bagian aplikasi dibuat agar mudah diakses, baik oleh pemula maupun pengguna yang sudah terbiasa dengan layanan digital. </p>
+                MindEase adalah platform kesehatan mental yang dirancang untuk membantu pengguna memahami,
+                memantau, dan meningkatkan kesejahteraan emosional mereka. Dengan tampilan yang sederhana,
+                modern, dan ramah pengguna, MindEase menghadirkan berbagai fitur yang memudahkan siapa saja
+                untuk mulai peduli pada kondisi mental mereka tanpa rasa canggung atau keraguan. Setiap
+                bagian aplikasi dibuat agar mudah diakses, baik oleh pemula maupun pengguna yang sudah terbiasa dengan layanan digital. </p>
             </p>
 
             <p class="mt-5">
-                MindEase menyediakan berbagai tes kesehatan mental yang telah disesuaikan dengan standar psikologi populer, seperti tes tingkat stres, kecemasan, suasana hati, hingga keseimbangan hidup. Hasil tes akan ditampilkan secara jelas sehingga pengguna dapat memahami kondisi diri mereka dengan lebih baik. Platform ini juga dilengkapi artikel dan tips kesehatan mental yang kredibel untuk membantu pengguna belajar menangani tantangan emosional sehari‑hari. Selain itu, MindEase menawarkan fitur konsultasi yang memungkinkan pengguna mengatur jadwal atau mendaftarkan sesi dengan konselor atau psikolog yang tersedia.
+                MindEase menyediakan berbagai tes kesehatan mental yang telah disesuaikan dengan standar 
+                psikologi populer, seperti tes tingkat stres, kecemasan, suasana hati, hingga keseimbangan 
+                hidup. Hasil tes akan ditampilkan secara jelas sehingga pengguna dapat memahami kondisi diri 
+                mereka dengan lebih baik. Platform ini juga dilengkapi artikel dan tips kesehatan mental yang 
+                kredibel untuk membantu pengguna belajar menangani tantangan emosional sehari‑hari. Selain itu, 
+                MindEase menawarkan fitur konsultasi yang memungkinkan pengguna mengatur jadwal atau mendaftarkan 
+                sesi dengan konselor atau psikolog yang tersedia.
             </p>
         </div>
 
@@ -58,47 +70,54 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" style="grid-template-rows: repeat(auto-fit, minmax(220px,1fr))">
 
             <!-- CARD 1 -->
-            <div class="bg-white w-64 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="https://i.imgur.com/3QAtFid.png" class="w-full h-52 object-cover">
-                <div class="p-4 flex items-center justify-between">
-                    <h2 class="text-lg font-medium">Stress</h2>
-                    <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
-                        <span class="text-white text-xl">↗</span>
-                    </button>
-                </div>
+            <div class="bg-white w-64 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition"><a href="stres.php">
+                    <img src="https://i.imgur.com/3QAtFid.png" class="w-full h-52 object-cover">
+                    <div class="p-4 flex items-center justify-between">
+                        <h2 class="text-lg font-medium">Stress</h2>
+                        <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
+                            <span class="text-white text-xl">↗</span>
+                        </button>
+                    </div>
+                </a>
             </div>
 
             <!-- CARD 2 -->
             <div class="bg-white w-64 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="https://i.imgur.com/YYwZT0x.png" class="w-full h-52 object-cover">
-                <div class="p-4 flex items-center justify-between">
-                    <h2 class="text-lg font-medium">Anxiety</h2>
-                    <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
-                        <span class="text-white text-xl">↗</span>
-                    </button>
-                </div>
+                <a href="anxiety.php">
+                    <img src="https://i.imgur.com/YYwZT0x.png" class="w-full h-52 object-cover">
+                    <div class="p-4 flex items-center justify-between">
+                        <h2 class="text-lg font-medium">Anxiety</h2>
+                        <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
+                            <span class="text-white text-xl">↗</span>
+                        </button>
+                    </div>
+                </a>
             </div>
 
             <!-- CARD 3 -->
             <div class="bg-white w-64 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="https://i.imgur.com/VctPc11.png" class="w-full h-52 object-cover">
-                <div class="p-4 flex items-center justify-between">
-                    <h2 class="text-lg font-medium">Depression</h2>
-                    <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
-                        <span class="text-white text-xl">↗</span>
-                    </button>
-                </div>
+                <a href="depression.php">
+                    <img src="https://i.imgur.com/VctPc11.png" class="w-full h-52 object-cover">
+                    <div class="p-4 flex items-center justify-between">
+                        <h2 class="text-lg font-medium">Depression</h2>
+                        <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
+                            <span class="text-white text-xl">↗</span>
+                        </button>
+                    </div>
+                </a>
             </div>
 
             <!-- CARD 4 -->
             <div class="bg-white w-64 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="https://i.imgur.com/VctPc11.png" class="w-full h-52 object-cover">
-                <div class="p-4 flex items-center justify-between">
-                    <h2 class="text-lg font-medium">Bipolar</h2>
-                    <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
-                        <span class="text-white text-xl">↗</span>
-                    </button>
-                </div>
+                <a href="pages/burnout.php">
+                    <img src="https://i.imgur.com/1qHpZjA.png" class="w-full h-52 object-cover">
+                    <div class="p-4 flex items-center justify-between">
+                        <h2 class="text-lg font-medium">Burnout</h2>
+                        <button class="w-8 h-8 flex items-center justify-center bg-[#0a382d] rounded-full">
+                            <span class="text-white text-xl">↗</span>
+                        </button>
+                    </div>
+                </a>
             </div>
 
         </div>

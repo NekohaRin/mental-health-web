@@ -23,7 +23,7 @@
             <li><a href="pages/teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
             <li><a href="pages/article&tips.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
             <li><a href="pages/daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
-            <li><a href="pages/about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
+            <li><a href="pages/informasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
         <a href="pages/login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a>
     </nav>
@@ -31,10 +31,10 @@
     <!-- MAIN SECTION -->
     <div class="container mx-auto flex flex-col items-center justify-center mt-4 text-center">
         <div class="hero">
-            <img src="assets/img/beground1.png" alt="" class="rounded-xl">
+            <img src="assets/img/dashboard.png" alt="" class="rounded-xl h-200">
 
             <audio id="bg-audio" autoplay loop>
-                <source src="../assets/audio/audio.mp3" type="audio/mpeg">
+                <source src="assets/audio/kena.mp3" type="audio/mpeg">
             </audio>
 
             <button id="audioToggle"
@@ -54,12 +54,12 @@
             </p>
 
             <p class="mt-5">
-                MindEase menyediakan berbagai tes kesehatan mental yang telah disesuaikan dengan standar 
-                psikologi populer, seperti tes tingkat stres, kecemasan, suasana hati, hingga keseimbangan 
-                hidup. Hasil tes akan ditampilkan secara jelas sehingga pengguna dapat memahami kondisi diri 
-                mereka dengan lebih baik. Platform ini juga dilengkapi artikel dan tips kesehatan mental yang 
-                kredibel untuk membantu pengguna belajar menangani tantangan emosional sehari‑hari. Selain itu, 
-                MindEase menawarkan fitur konsultasi yang memungkinkan pengguna mengatur jadwal atau mendaftarkan 
+                MindEase menyediakan berbagai tes kesehatan mental yang telah disesuaikan dengan standar
+                psikologi populer, seperti tes tingkat stres, kecemasan, suasana hati, hingga keseimbangan
+                hidup. Hasil tes akan ditampilkan secara jelas sehingga pengguna dapat memahami kondisi diri
+                mereka dengan lebih baik. Platform ini juga dilengkapi artikel dan tips kesehatan mental yang
+                kredibel untuk membantu pengguna belajar menangani tantangan emosional sehari‑hari. Selain itu,
+                MindEase menawarkan fitur konsultasi yang memungkinkan pengguna mengatur jadwal atau mendaftarkan
                 sesi dengan konselor atau psikolog yang tersedia.
             </p>
         </div>

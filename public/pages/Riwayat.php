@@ -1,6 +1,7 @@
 <?php
-include ''; //koneksi
-include ''; //session_protection
+session_start();
+include '../../app/config/koneksi.php'; //koneksi
+include '../../app/config/koneksi.php'; //session_protection
 
 $id_user = $_SESSION['id_user'];
 ?>
@@ -32,7 +33,7 @@ $id_user = $_SESSION['id_user'];
     } else if ($_GET['riwayat'] == 'depresi') {
         ?>
         <h1>Riwayat Depresi</h1>
-    <?php
+        <?php
         $skor = [];
         $tanggal = [];
         $sql = mysqli_query($koneksi, "SELECT * from depresi where id_user = '$id_user' order by tgl_buat asc");
@@ -42,10 +43,10 @@ $id_user = $_SESSION['id_user'];
                 $tanggal[] = $data['tgl_buat'];
             }
         }
-    }else if ($_GET['riwayat'] == 'burnout') {
+    } else if ($_GET['riwayat'] == 'burnout') {
         ?>
         <h1>Riwayat Burnout</h1>
-    <?php
+        <?php
         $skor = [];
         $tanggal = [];
         $sql = mysqli_query($koneksi, "SELECT * from bornout where id_user = '$id_user' order by tgl_buat asc");
@@ -58,7 +59,7 @@ $id_user = $_SESSION['id_user'];
     } else if ($_GET['riwayat'] == 'anxiety') {
         ?>
         <h1>Riwayat Kecemasan</h1>
-    <?php
+        <?php
         $skor = [];
         $tanggal = [];
         $sql = mysqli_query($koneksi, "SELECT * from kecemasan where id_user = '$id_user' order by tgl_buat asc");
@@ -68,7 +69,7 @@ $id_user = $_SESSION['id_user'];
                 $tanggal[] = $data['tgl_buat'];
             }
         }
-    }else if ($_GET['riwayat'] == 'k_tidur') {
+    } else if ($_GET['riwayat'] == 'k_tidur') {
         ?>
         <h1>Riwayat Kurang Tidur</h1>
     <?php
@@ -124,7 +125,7 @@ $id_user = $_SESSION['id_user'];
             });
         </script>
     <?php } ?>
-
+            <button type="button" onclick="window.location.href='dashboard.php'">KEMBALI</button>
 </body>
 
 </html>

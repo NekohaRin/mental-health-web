@@ -15,7 +15,7 @@
         $data = mysqli_fetch_assoc($sql);
         $_SESSION['id_user'] = $data['id_user'];
         $_SESSION['username'] = $data['username'];
-        header("Location: ../index.php");
+        header("Location: ../../public/pages/dashboard.php");
     }else{
         if($_GET['login']=='email'){
             header("Location: ../login_email.php?status=gagal");

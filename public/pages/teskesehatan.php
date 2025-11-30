@@ -14,8 +14,7 @@
     <nav class="flex flex-row max-w-full mx-auto justify-between items-center mt-3 mb-5">
         <h2 class="ml-9 text-3xl hover:text-lime-400 font-semibold">MindEase</h2>
         <ul class="list-none flex flex-row gap-x-4 bg-lime-200 px-1.5 py-2 rounded-full">
-            <li><a href="dashboard.php" class=" px-4 rounded-full py-1.5">Beranda</a></li>
-            <li><a href="#" class="bg-lime-50 px-4 rounded-full py-1.5 active:bg-lime-400">Tes Kesehatan</a></li>
+            <li><a href="../index.php"lime-50 px-4 rounded-full py-1.5 active:bg-lime-400">Tes Kesehatan</a></li>
             <li><a href="" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
             <li><a href="" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
             <li><a href="" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>

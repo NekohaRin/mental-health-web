@@ -1,5 +1,6 @@
 <?php 
-include '../../'
+include '../../app/config/koneksi.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +76,7 @@ include '../../'
                     <div class="flex mb-6 items-center">
                         <label for="password" class="w-32 text-xl font-semibold">Password</label><br>
                         <span class="mx-3 text-xl font-bold">:</span>
-                        <input type="password" class="border px-3 py-1 w-full rounded" id="password" name="Password" maxlength="8" placeholder="Masukkan Pasword Anda maksimal 8 karakter" required>
+                        <input type="password" class="border px-3 py-1 w-full rounded" id="password" name="password" maxlength="8" placeholder="Masukkan Pasword Anda maksimal 8 karakter" required>
                     </div>
 
                     <div class="flex mb-6 items-center">

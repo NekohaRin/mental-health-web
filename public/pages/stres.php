@@ -1,3 +1,9 @@
+<?php 
+// session_start();
+include '../../app/config/koneksi.php';
+include '../../app/config/session_protected.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +22,12 @@
         <h1 class="text-2xl font-semibold mb-6 text-center">Seberapa sering kamu mengalami hal berikut:</h1>
         <!-- PROGRESS BAR -->
         <div class="w-full bg-gray-200 rounded-full h-3 mb-6">
-            <div id="progressBar" class="bg-blue-500 h-3 rounded-full transition-all duration-300" style="width: 0%;"></div>
+            <div id="progressBar" class="bg-lime-600 h-3 rounded-full transition-all duration-300" style="width: 0%;"></div>
         </div>
 
 
-        <form action="../app/controllers/proses_ceksehat.php?cek=stres" method="POST" class="space-y-6">
+        <form action="../../app/controllers/proses_ceksehat.php?cek=stres" method="POST" class="space-y-6">
+
 
             <!-- 1 -->
             <div class="space-y-3">
@@ -230,7 +237,7 @@
             </div>
 
             <!-- SUBMIT -->
-            <button type="submit" class="w-full mt-6 hijau-bg hover:bg-blue-700 text-white font-semibold py-3 rounded-lg">
+            <button type="submit" class="w-full mt-6 bg-lime-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg">
                 Lihat Hasil
             </button>
 
