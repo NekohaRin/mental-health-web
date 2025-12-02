@@ -34,8 +34,8 @@
             <div class="w-[380px] mr-7">
                 <h1 class="text-9xl font-playfair font-bold mb-5">Login</h1>
                 <p class="mb-10 text-lg">Ingin menggunakan nomer handphone? <a href="login_nohp.php">Klik disini</a>
-                <p>
-                <form action="../../app/controllers/process_login.php" method="POST" class="items-center">
+                <p>              <form action="../../app/controllers/process_login.php?login=email" method="POST" class="items-center">
+  
                     <div class="flex mb-4 items-center">
                         <label for="username" class="w-32 text-xl font-semibold">Username</label><br>
                         <span class="mx-3 text-xl font-bold">:</span>
