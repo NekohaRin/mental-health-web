@@ -16,7 +16,12 @@ if (mysqli_num_rows($sql) > 0) {
     $data = mysqli_fetch_assoc($sql);
     $_SESSION['id_user'] = $data['id_user'];
     $_SESSION['username'] = $data['username'];
-    header("Location: ../../public/pages/dashboard.php");
+
+    if ($data['username'] == 'atmin19jt') {
+        header("Location: ../../public/pages/dokter_list.php");
+    } else {
+        header("Location: ../../public/pages/dashboard.php");
+    }
 } else {
     if ($_GET['login'] == 'email') {
         header("Location: ../login_email.php?status=gagal");

@@ -1,70 +1,92 @@
 <?php
-include '../../app/config/koneksi.php';
-$admin = "atmin19jt";
-$password = "123";
-
 session_start();
-if (!isset($_SESSION['admin'])) {
-    header("Location: login_admin.php");
+include '../../app/config/koneksi.php';
+
+// CEK ADMIN (username langsung)
+if (!isset($_SESSION['username']) || $_SESSION['username'] != "atmin19jt") {
+    header("Location: login_email.php");
     exit;
 }
 
+// ambil data dokter
 $query = mysqli_query($koneksi, "SELECT * FROM dokter ORDER BY id_dokter DESC");
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <title>Kelola Dokter — Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Dashboard Dokter</title>
 </head>
+
 <body class="bg-gray-100">
 
-<div class="max-w-6xl mx-auto mt-10 p-5">
+    <!-- NAVBAR -->
+    <nav class="flex justify-between bg-lime-600 p-4 text-white">
+        
+        <h1 class="text-xl font-bold">Panel Admin — <?php echo $_SESSION['username'] ?></h1>
 
-    <div class="flex justify-between items-center mb-5">
-        <h1 class="text-2xl font-bold">Daftar Dokter</h1>
-        <a href="dokter_tambah.php" 
-           class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-            + Tambah Dokter
-        </a>
-    </div>
+        <div class="flex gap-4">
+            <a href="dokter_tambah.php" class="bg-white text-lime-600 px-4 py-2 rounded-lg font-bold">+ Tambah Dokter</a>
+            <a href="../../app/controllers/logout.php" class="bg-red-500 px-4 py-2 rounded-lg font-bold">Logout</a>
+        </div>
+    </nav>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="container mx-auto p-6">
 
-        <?php while($row = mysqli_fetch_assoc($query)): ?>
-        <div class="bg-white p-5 rounded-xl shadow hover:shadow-xl transition">
+        <h2 class="text-2xl font-bold mb-6">Daftar Dokter</h2>
 
-            <img src="upload/<?= $row['foto'] ?>" 
-                 class="h-40 w-full object-cover rounded-lg mb-3">
+        <!-- GRID CARD -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <h3 class="text-lg font-bold"><?= $row['nama'] ?></h3>
-            <p class="text-gray-600 text-sm"><?= $row['penanganan'] ?></p>
+            <?php while ($data = mysqli_fetch_assoc($query)) : ?>
 
-            <p class="text-blue-600 font-semibold mt-1">
-                Rp<?= number_format($row['harga_min']) ?> – 
-                Rp<?= number_format($row['harga_max']) ?>
-            </p>
+                <div class="bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
 
-            <div class="flex gap-3 mt-4">
-                <a href="dokter_edit.php?id=<?= $row['id_dokter'] ?>" 
-                   class="flex-1 text-center py-2 bg-yellow-400 text-white rounded-lg">
-                   Edit
-                </a>
+                    <!-- FOTO DEFAULT -->
+                    <img src="../assets/img/male1.jpg"
+                        class="w-full h-48 object-cover rounded-xl object-top mb-4" />
 
-                <a onclick="return confirm('Yakin ingin menghapus?')" 
-                   href="dokter_hapus.php?id=<?= $row['id_dokter'] ?>" 
-                   class="flex-1 text-center py-2 bg-red-500 text-white rounded-lg">
-                   Hapus
-                </a>
-            </div>
+                    <h2 class="text-xl font-semibold"><?= $data['nama_dokter']; ?></h2>
+
+                    <p class="text-gray-600 mt-1 text-sm">
+                        Spesialis: <span class="font-medium text-lime-700"><?= $data['spesialis']; ?></span>
+                    </p>
+
+                    <p class="mt-2 text-gray-800 font-medium">
+                        Biaya:
+                        <span class="text-lime-700">
+                            Rp <?= number_format($data['harga_min'], 0, ',', '.'); ?>
+                        </span>
+                        -
+                        <span class="text-lime-700">
+                            Rp <?= number_format($data['harga_max'], 0, ',', '.'); ?>
+                        </span>
+                    </p>
+
+                    <!-- TOMBOL AKSI -->
+                    <div class="flex gap-2 mt-4">
+                        <a href="dokter_edit.php?id=<?= $data['id_dokter']; ?>"
+                            class="flex-1 bg-blue-600 text-white py-2 rounded-xl text-center hover:bg-blue-800">
+                            Edit
+                        </a>
+                        <a href="../../app/controllers/dokter_hapus.php?id=<?= $data['id_dokter']; ?>"
+                            onclick="return confirm('Yakin ingin menghapus dokter ini?')"
+                            class="flex-1 bg-red-600 text-white py-2 rounded-xl text-center hover:bg-red-800">
+                            Hapus
+                        </a>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
 
         </div>
-        <?php endwhile; ?>
-
     </div>
-</div>
 
 </body>
+
 </html>
+

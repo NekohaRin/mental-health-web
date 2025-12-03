@@ -1,3 +1,8 @@
+<?php
+include '../../app/config/koneksi.php'; //koneksi
+include '../../app/config/session_protected.php'; //session_protected
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,104 +19,62 @@
         <ul class="list-none flex flex-row gap-x-6 bg-lime-200 px-1.5 py-2 rounded-full">
             <li><a href="../index.php" class=" px-4 rounded-full py-1.5 hover:bg-lime-50">Beranda</a></li>
             <li><a href="teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
-            <li><a href="pages/article&tips.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
+            <li><a href="article&tips.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
             <li><a href="#" class=" bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
-            <li><a href="pages/about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
+            <li><a href="about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
-        <a href="pages/login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a>
+        <!-- <a href="pages/login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a> -->
+        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
     </nav>
 
-    <div class="container mx-auto py-10 px-4">
+    <?php
+    include '../../app/config/koneksi.php';
 
-        <!-- TITLE -->
-        <h1 class="text-3xl font-bold text-center mb-4">Daftar Konsultasi</h1>
-        <p class="text-center text-gray-600 mb-10">
-            Pilih konselor atau psikolog yang sesuai dengan kebutuhanmu.
-        </p>
+    $query = mysqli_query($koneksi, "SELECT * FROM dokter ORDER BY id_dokter ASC");
+    ?>
 
-        <!-- GRID CARD DOKTER -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="max-w-6xl mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6">Daftar Konsultasi Dokter</h1>
 
-            <!-- CARD 1 -->
-            <div class="bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
-                <img src="../assets/img/female1.jpg"
-                    class="w-full h-52 object-cover rounded-xl object-top">
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            <?php while ($dok = mysqli_fetch_assoc($query)) { ?>
+                <div class="bg-white shadow-lg rounded-xl p-5 flex flex-col items-center hover:scale-105 transition">
 
-                <h2 class="text-xl font-semibold mt-4">Dr. Amanda Putri</h2>
-                <p class="text-gray-600 mt-1">Psikolog Klinis</p>
+                    <!-- Foto DEFAULT -->
+                    <img src="../assets/img/male1.jpg"
+                        class="w-24 h-24 rounded-full mb-4" alt="dokter">
 
-                <div class="mt-3">
-                    <p class="text-sm font-medium text-gray-700">Penanganan:</p>
-                    <div class="flex flex-wrap gap-2 mt-2">
-                        <span class="px-3 py-1 text-xs bg-green-700 text-white rounded-full">Depresi</span>
-                        <span class="px-3 py-1 text-xs bg-blue-600 text-white rounded-full">Anxiety</span>
-                        <span class="px-3 py-1 text-xs bg-yellow-600 text-white rounded-full">Stress</span>
-                    </div>
+                    <h2 class="text-xl font-semibold text-center">
+                        <?= $dok['nama_dokter']; ?>
+                    </h2>
+
+                    <p class="text-gray-600 text-center text-sm">
+                        <?= $dok['spesialis']; ?>
+                    </p>
+
+                    <!-- HARGA -->
+                    <p class="mt-3 text-center font-medium text-gray-700">
+                        Biaya:
+                        <span class="text-green-700">
+                            Rp <?= number_format($dok['harga_min'], 0, ',', '.'); ?>
+                        </span>
+                        -
+                        <span class="text-green-700">
+                            Rp <?= number_format($dok['harga_max'], 0, ',', '.'); ?>
+                        </span>
+                    </p>
+
+                    <a href="konsultasi_form.php?id=<?= $dok['id_dokter']; ?>"
+                        class="mt-4 px-5 py-2 bg-lime-600 text-white rounded-lg hover:bg-lime-700">
+                        Konsultasi
+                    </a>
                 </div>
-
-                <p class="mt-4 text-gray-800 font-medium">
-                    Biaya: <span class="text-green-700">Rp 40.000 - Rp 80.000</span>
-                </p>
-
-                <button class="w-full mt-4 bg-green-700 text-white py-2 rounded-xl hover:bg-green-800 transition">
-                    Booking Sekarang
-                </button>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
-                <img src="../assets/img/male1.jpg"
-                    class="w-full h-52 object-cover object-top rounded-xl">
-
-                <h2 class="text-xl font-semibold mt-4">Dr. Budi Santoso</h2>
-                <p class="text-gray-600 mt-1">Konselor Mental Health</p>
-
-                <div class="mt-3">
-                    <p class="text-sm font-medium text-gray-700">Penanganan:</p>
-                    <div class="flex flex-wrap gap-2 mt-2">
-                        <span class="px-3 py-1 text-xs bg-red-600 text-white rounded-full">Burnout</span>
-                        <span class="px-3 py-1 text-xs bg-yellow-600 text-white rounded-full">Stress</span>
-                    </div>
-                </div>
-
-                <p class="mt-4 text-gray-800 font-medium">
-                    Biaya: <span class="text-green-700">Rp 50.000 - Rp 90.000</span>
-                </p>
-
-                <button class="w-full mt-4 bg-green-700 text-white py-2 rounded-xl hover:bg-green-800 transition">
-                    Booking Sekarang
-                </button>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
-                <img src="../assets/img/female2.jpg"
-                    class="w-full h-52 object-cover object-top rounded-xl">
-
-                <h2 class="text-xl font-semibold mt-4">Dr. Clara Wijaya</h2>
-                <p class="text-gray-600 mt-1">Psikiater</p>
-
-                <div class="mt-3">
-                    <p class="text-sm font-medium text-gray-700">Penanganan:</p>
-                    <div class="flex flex-wrap gap-2 mt-2">
-                        <span class="px-3 py-1 text-xs bg-blue-600 text-white rounded-full">Anxiety</span>
-                        <span class="px-3 py-1 text-xs bg-red-600 text-white rounded-full">Burnout</span>
-                        <span class="px-3 py-1 text-xs bg-green-700 text-white rounded-full">Depresi</span>
-                    </div>
-                </div>
-
-                <p class="mt-4 text-gray-800 font-medium">
-                    Biaya: <span class="text-green-700">Rp 70.000 - Rp 100.000</span>
-                </p>
-
-                <button class="w-full mt-4 bg-green-700 text-white py-2 rounded-xl hover:bg-green-800 transition">
-                    Booking Sekarang
-                </button>
-            </div>
-
+            <?php } ?>
         </div>
+    </div>
 
     </div>
+
 
 </body>
 

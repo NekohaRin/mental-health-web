@@ -1,3 +1,8 @@
+<?php
+session_start();
+include '../../app/config/koneksi.php'; //koneksi
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +23,11 @@
             <li><a href="../index.php" class=" hover:bg-lime-50 px-4 rounded-full py-1.5">Beranda</a></li>
             <li><a href="teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
             <li><a href="#" class="bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
-            <li><a href="" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
+            <li><a href="daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
             <li><a href="about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
-        <a href="login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a>
+        <!-- <a href="login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a> -->
+        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
     </nav>
     <div class="container mx-auto py-8 px-4">
 
