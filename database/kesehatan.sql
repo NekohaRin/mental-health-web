@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2025 at 02:58 PM
+-- Generation Time: Dec 03, 2025 at 11:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -55,12 +55,19 @@ CREATE TABLE `depresi` (
 
 CREATE TABLE `dokter` (
   `id_dokter` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `penanganan` varchar(255) NOT NULL,
+  `nama_dokter` varchar(100) NOT NULL,
+  `spesialis` varchar(255) NOT NULL,
   `harga_min` int(11) NOT NULL,
-  `harga_max` int(11) NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `harga_max` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `dokter`
+--
+
+INSERT INTO `dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `harga_min`, `harga_max`) VALUES
+(3, 'june', 'Anxiety', 45000, 56000),
+(4, 'joko susanto', 'Burnout', 35000, 50000);
 
 -- --------------------------------------------------------
 
@@ -198,7 +205,7 @@ ALTER TABLE `depresi`
 -- AUTO_INCREMENT for table `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kecemasan`
