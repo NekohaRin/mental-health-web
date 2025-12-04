@@ -26,8 +26,12 @@ include '../../app/config/session_protected.php'; //session_protected
             <li><a href="daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
             <li><a href="about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
+        <div class="flex flex-row align-center justify-center">
+            <p class="mr-4 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
+            <img src="../assets/img/out (2).png" alt="" class=" mr-4 h-12 items-center cursor-pointer" onclick="window.location.href='../../app/controllers/logout.php'">
+        </div>
         <!-- <a href="login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a> -->
-        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
+        <!-- <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p> -->
     </nav>
     <div class="container mx-auto py-8 px-4">
 

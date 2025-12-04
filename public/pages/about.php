@@ -20,14 +20,16 @@ include '../../app/config/session_protected.php'; //session_protected
     <nav class="flex flex-row max-w-full mx-auto justify-between items-center mt-3">
         <h2 class="ml-9 text-3xl hover:text-lime-400 font-semibold">MindEase</h2>
         <ul class="list-none flex flex-row gap-x-6 bg-lime-200 px-1.5 py-2 rounded-full">
-            <li><a href="../index.php" class=" hover:bg-lime-50 px-4 rounded-full py-1.5">Beranda</a></li>
+            <li><a href="dashboard.php" class=" hover:bg-lime-50 px-4 rounded-full py-1.5">Beranda</a></li>
             <li><a href="teskesehatan.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tes Kesehatan</a></li>
             <li><a href="article&tips.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Artikel & Tips</a></li>
             <li><a href="daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
             <li><a href="#" class="bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
-        <!-- <a href="pages/login_email.php" class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400">Login</a> -->
-        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
+        <div class="flex flex-row align-center justify-center">
+            <p class="mr-4 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
+            <img src="../assets/img/out (2).png" alt="" class=" mr-4 h-12 items-center cursor-pointer" onclick="window.location.href='../../app/controllers/logout.php'">
+        </div>
     </nav>
         <div class="max-w-6xl mx-auto p-6">
         <h1 class="text-3xl font-bold mb-6">Daftar Konsultasi Dokter</h1>

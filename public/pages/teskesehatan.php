@@ -25,7 +25,10 @@ include '../../app/config/session_protected.php'; //session_protected
             <li><a href="daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
             <li><a href="about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
-        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
+        <div class="flex flex-row align-center justify-center">
+            <p class="mr-4 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
+            <img src="../assets/img/out (2).png" alt="" class=" mr-4 h-12 items-center cursor-pointer" onclick="window.location.href='../../app/controllers/logout.php'">
+        </div>
     </nav>
 
     <section class="w-full bg-lime-50 pb-20 mt-4">
@@ -38,7 +41,6 @@ include '../../app/config/session_protected.php'; //session_protected
             <p class="mt-4 text-lg md:text-xl max-w-2xl">
                 Mulailah memahami kondisi kesehatan mentalmu dengan serangkaian tes cepat dan terpercaya.
                 Tes ini membantu kamu mengenali gejala awal dan langkah tepat menuju pemulihan.
-            <a href="riwayat.php" class="bg-lime-500 px-5 py-3 mt-7">Riwayat</a>
             </p>
         </div>
 
