@@ -1,6 +1,6 @@
 <?php
-session_start();
 include '../../app/config/koneksi.php'; //koneksi
+include '../../app/config/session_protected.php'; //session_protected
 ?>
 
 <!DOCTYPE html>

@@ -3,14 +3,6 @@ session_start();
 include "../config/koneksi.php"; //sambung ke koneksi//
 
 $id_user = $_SESSION['id_user'];
-// if($_GET['cek']=='stres'){
-//     $skor=$_POST['satu']+$_POST['dua']+$_POST['tiga']+$_POST['empat']+$_POST['lima']+$_POST['enam']+$_POST['tujuh']+$_POST['delapan']+$_POST['sembilan'];
-//     $sql=mysqli_query($koneksi, "INSERT INTO stres (id_user, skor, tgl_buat) values ('$id_user', '$skor', NOW())");
-//     if ($sql){
-//         header("Location: ../../public/pages/riwayat.php?riwayat=stres"); //Lokasi recap
-//     }else {
-//         echo "Error: " . mysqli_error($koneksi);
-//     }
 if($_GET['cek']=='stres'){
     $skor = $_POST['satu'] + $_POST['dua'] + $_POST['tiga'] + $_POST['empat'] + $_POST['lima'] + $_POST['enam'] + $_POST['tujuh'] + $_POST['delapan'] + $_POST['sembilan'];
     

@@ -33,24 +33,24 @@
             <div class="w-[500px]"></div>
             <div class="w-[380px] mr-7">
                 <h1 class="text-9xl font-playfair font-bold mb-5">Login</h1>
-                <p class="mb-10 text-lg">Ingin menggunakan nomer handphone? <a href="login_nohp.php">Klik disini</a>
+                <p class="mb-10 text-lg">Ingin menggunakan nomer handphone? <a href="login_nohp.php" class="text-lime-600 font-semibold">Klik disini</a>
                 <p>              <form action="../../app/controllers/process_login.php?login=email" method="POST" class="items-center">
   
                     <div class="flex mb-4 items-center">
                         <label for="username" class="w-32 text-xl font-semibold">Username</label><br>
-                        <span class="mx-3 text-xl font-bold">:</span>
+                        <span class="ml-5 mr-3 text-xl font-bold">:</span>
                         <input type="text" id="username" name="username" class="border px-3 py-1 w-full rounded" placeholder="Masukkan Username" required>
                     </div>
 
                     <div class="flex mb-6 items-center">
                         <label class="w-32 text-xl font-semibold" for="email">Email</label><br>
-                        <span class="mx-3 ml-7 text-xl font-bold">:</span>
+                        <span class="mr-3 ml-7.5 text-xl font-bold">:</span>
                         <input class="border px-3 py-1 w-full rounded" type="email" id="email" name="email" placeholder="Masukkan Email" required>
                     </div>
 
                     <div class="flex mb-6 items-center">
                         <label for="password" class="w-32 text-xl font-semibold">Password</label><br>
-                        <span class="mx-3 ml-4 text-xl font-bold">:</span>
+                        <span class="mx-3 ml-7 text-xl font-bold">:</span>
                         <input type="password" class="border px-3 py-1 w-full rounded" id="password" name="password" placeholder="Masukkan Password" required>
                     </div>
 

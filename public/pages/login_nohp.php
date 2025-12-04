@@ -17,15 +17,7 @@
 </head>
 
 <body class="h-screen w-full bg-cover bg-center" style="background-image: url(../assets/img/beground1.png) ">
-    <?php
-    // if(isset($_get['status'])){
-    //     if ($_get['status']=='gagal'){
-    //         echo ("gagal login");
-    // }else if ($_GET['status']=='buatakun'){
-    //     echo ("Akun berhasil di buat silahkan login");
-    // }
-    // }
-    ?>
+
     <div class="relative h-full w-full flex">
 
         <div class="absolute right-0 top-0 h-full w-full diagonal-bg"></div>
@@ -33,7 +25,7 @@
             <div class="w-[500px]"></div>
             <div class="w-[435px] mr-7">
                 <h1 class="text-9xl font-playfair font-bold mb-5">Login</h1>
-                <p class="mb-10 text-lg">Ingin menggunakan email? <a href="login_email.php">Klik disini</a>
+                <p class="mb-10 text-lg">Ingin menggunakan email? <a href="login_email.php" class=" text-lime-600 font-semibold">Klik disini</a>
                 <p>
                 <form action="scr/pro_login.php?login=no_hp" method="POST" class="items-center">
                     <div class="flex mb-4 items-center">
@@ -48,12 +40,6 @@
                         <input class="border px-3 py-1 w-full rounded" type="tel" id="no_hp" name="no_hp" pattern="^(\+62|62|0)8[0-9]{8,11}$" placeholder="08xxxx" required>
                     </div>
 
-                    <!-- <div class="flex mb-6 items-center">
-                        <label class="w-32 text-xl font-semibold" for="email">Email</label><br>
-                        <span class="mx-3 ml-7 text-xl font-bold">:</span>
-                        <input class="border px-3 py-1 w-full rounded" type="email" id="email" name="email" placeholder="Masukkan Email" required>
-                    </div> -->
-
                     <div class="flex mb-6 items-center">
                         <label for="password" class="w-32 text-xl font-semibold">Password</label><br>
                         <span class="mx-3 ml-26 text-xl font-bold">:</span>
@@ -61,7 +47,7 @@
                     </div>
 
                     <div class="flex mb-6 items-center">
-                    <button type="submit" id="submit" class="bg-lime-600 font-bold text-xl px-7 py-3 rounded-full items-center" name="submit">Login</button>
+                        <button type="submit" id="submit" class="bg-lime-600 font-bold text-xl px-7 py-3 rounded-full items-center" name="submit">Login</button>
                     </div>
                 </form>
                 <p>Belum mempunyai akun? <a href="register.php?login=email" class="text-lime-600 font-semibold">Daftar di sini</a>

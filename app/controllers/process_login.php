@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include '../config/koneksi.php';
@@ -24,8 +25,8 @@ if (mysqli_num_rows($sql) > 0) {
     }
 } else {
     if ($_GET['login'] == 'email') {
-        header("Location: ../login_email.php?status=gagal");
+        header("Location: ../../public/pages/login_email.php?status=gagal");
     } else if ($_GET['login'] == 'nohp') {
-        header("location: ../login_nohp.php?status=gagal");
+        header("Location: ../../public/pages/login_nohp.php?status=gagal");
     }
 }

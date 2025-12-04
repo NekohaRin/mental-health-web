@@ -15,8 +15,8 @@ include '../../app/config/session_protected.php'; //session_protected
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
-        <nav class="flex flex-row max-w-full mx-auto justify-between items-center mt-3">
+<body class="bg-lime-50">
+    <nav class="flex flex-row max-w-full mx-auto justify-between items-center mt-3">
         <h2 class="ml-9 text-3xl hover:text-lime-400 font-semibold">MindEase</h2>
         <ul class="list-none flex flex-row gap-x-6 bg-lime-200 px-1.5 py-2 rounded-full">
             <li><a href="dashboard.php" class=" hover:bg-lime-50 px-4 rounded-full py-1.5">Beranda</a></li>
@@ -25,10 +25,10 @@ include '../../app/config/session_protected.php'; //session_protected
             <li><a href="daftarKonsultasi.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Daftar Konsultasi</a></li>
             <li><a href="about.php" class="hover:bg-lime-50 px-4 rounded-full py-1.5">Tentang Kami</a></li>
         </ul>
-        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username']?></p>
+        <p class="mr-9 text-base bg-lime-600 text-white py-3 rounded-full font-bold px-8 hover:bg-lime-400"><?php echo $_SESSION['username'] ?></p>
     </nav>
 
-    <section class="w-full bg-gray-100 pb-20 mt-4">
+    <section class="w-full bg-lime-50 pb-20 mt-4">
 
         <!-- HERO / JUDUL -->
         <div class="hijau-bg text-white py-20 px-6 text-center md:text-left md:px-24 fade-in-down">
@@ -38,6 +38,7 @@ include '../../app/config/session_protected.php'; //session_protected
             <p class="mt-4 text-lg md:text-xl max-w-2xl">
                 Mulailah memahami kondisi kesehatan mentalmu dengan serangkaian tes cepat dan terpercaya.
                 Tes ini membantu kamu mengenali gejala awal dan langkah tepat menuju pemulihan.
+            <a href="riwayat.php" class="bg-lime-500 px-5 py-3 mt-7">Riwayat</a>
             </p>
         </div>
 
@@ -61,7 +62,7 @@ include '../../app/config/session_protected.php'; //session_protected
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 <!-- CARD: Stress -->
-                <a href="stress-test.html"
+                <a href="stres.php"
                     class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition group opacity-0"
                     style="animation: fadeInUp 0.8s ease forwards; animation-delay: 0.1s">
                     <div class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center">
@@ -74,7 +75,7 @@ include '../../app/config/session_protected.php'; //session_protected
                 </a>
 
                 <!-- CARD: Anxiety -->
-                <a href="anxiety-test.html"
+                <a href="anxiety.php"
                     class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition group opacity-0"
                     style="animation: fadeInUp 0.8s ease forwards; animation-delay: 0.25s">
                     <div class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center">
@@ -87,7 +88,7 @@ include '../../app/config/session_protected.php'; //session_protected
                 </a>
 
                 <!-- CARD: Depression -->
-                <a href="depression-test.html"
+                <a href="depression.php"
                     class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition group opacity-0"
                     style="animation: fadeInUp 0.8s ease forwards; animation-delay: 0.4s">
                     <div class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center">
@@ -100,13 +101,26 @@ include '../../app/config/session_protected.php'; //session_protected
                 </a>
 
                 <!-- CARD: Burnout -->
-                <a href="burnout-test.html"
+                <a href="burnout.php"
                     class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition group opacity-0"
                     style="animation: fadeInUp 0.8s ease forwards; animation-delay: 0.55s">
                     <div class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center">
                         <span class="text-gray-500">Image</span>
                     </div>
                     <h3 class="text-xl font-semibold mt-4 group-hover:text-[#0a2740]">Tes Burnout</h3>
+                    <p class="text-gray-600 text-sm mt-2">
+                        Lihat apakah kamu mengalami kelelahan fisik & mental.
+                    </p>
+                </a>
+
+                <!-- CARD: Kurang tidur -->
+                <a href=".php"
+                    class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition group opacity-0"
+                    style="animation: fadeInUp 0.8s ease forwards; animation-delay: 0.55s">
+                    <div class="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center">
+                        <span class="text-gray-500">Image</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4 group-hover:text-[#0a2740]">Tes Kurang Tidur</h3>
                     <p class="text-gray-600 text-sm mt-2">
                         Lihat apakah kamu mengalami kelelahan fisik & mental.
                     </p>
